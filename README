@@ -1,0 +1,40 @@
+
+
+ 1- GEANT4 INSTALLATION WITH OPENGL ON
+
+	0. Download the newest Geant4 source file from http://geant4.cern.ch/support/download.shtml.
+	1. Untar Geant4.xx.xx.tar to the directory where you will install your Geant4, for example, /path/to/geant4.xx.xx/
+        2. $ cd /path/to/
+	   $ mkdir geant4.xx.xx-build
+	   $ cd /path/to/geant4.xx.xx-build
+        3. $ cmake -DGEANT4_USE_OPENGL_X11=ON  -DGEANT4_INSTALL_DATA=ON  -DCMAKE_INSTALL_PREFIX=/path/to/geant4.xx.xx-install /path/to/geant4.xx.xx
+        4. $ make -jN
+	   $ make install
+	5. $ cd /path/to/geant4.xx.xx-install/bin/
+	   $ source geant4.sh
+	6. try:
+	   $ env | grep G4
+	   Variables should show up in prompt.
+
+
+
+ 2- RUN CRYSTAL TIMING SIMULATION
+
+	0. To run this simulation, you must have GEANT4 and ROOT pre-installed.
+	1. Untar crystal_timing.tgz to your working directory ~/
+	2. Remember to source both geant4 and root.
+	3. $ cd ~/crystal_timing/build/
+	   $ cmake -DGeant4_DIR=/path/to/geant4.xx.xx-install/lib/Geant4.xx.xx/ ..
+	   $ make
+	4. Run the simulation by entering:
+	   $ ./LXe
+	   This will bring up a interactive prompt >>> and a window should pop up.
+	5. Try the following commands:
+	   >>> /run/initialize
+	   >>> /control/execute scint.mac
+	   >>> /gunExample/histo/setFileName test.root
+	   >>> /vis/viewer/set/upVector 0.1 0.1 2
+	   >>> /vis/viewer/set/viewpointThetaPhi 60 60
+	   >>> /vis/scene/add/axes 0 0 0 100 mm
+	   >>> /run/beamOn 1
+		### Note that the graphics should change simultaneously in response to the commands.

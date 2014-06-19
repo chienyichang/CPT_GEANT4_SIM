@@ -1,0 +1,31 @@
+#################
+##
+## This example demonstrates the cerenkov process by using a 200 MeV mu+
+## particle in a geometry configuration that shows the cerenkov cone
+## and pmts hit by it.
+##
+#################
+/run/initialize
+/gunExample/histo/setFileName test2.root
+
+#/LXe/detector/MainScintYield 100
+
+/LXe/detector/nx 1
+/LXe/detector/ny 1
+/LXe/detector/nz 0
+/LXe/detector/dimensions 2.5 2.5 10 cm
+/LXe/detector/housingThickness 0.0635 cm
+/LXe/detector/pmtRadius 0.05 cm
+/LXe/pmtThreshold 1
+/LXe/detector/volumes/sphere 0
+/LXe/detector/reflectivity 0.1
+/LXe/detector/update
+
+/gun/particle e-
+/gun/energy 5 GeV
+
+#This causes the primary particle to be killed after its first step in the
+#scintillator volume. Thus preventing the cerenkov cone to fill in.
+/LXe/oneStepPrimaries false
+
+/run/beamOn 1

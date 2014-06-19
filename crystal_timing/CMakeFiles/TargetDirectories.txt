@@ -1,0 +1,2 @@
+/Volumes/MacintoshHD/Users/apresyan/Applications/geant4.9.6.p02/examples/extended/optical/crystal_timing_gammaBeam_newMaterials/LXe/CMakeFiles/LXe.dir
+/Volumes/MacintoshHD/Users/apresyan/Applications/geant4.9.6.p02/examples/extended/optical/crystal_timing_gammaBeam_newMaterials/wls/CMakeFiles/wls.dir
